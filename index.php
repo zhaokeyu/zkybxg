@@ -1,6 +1,6 @@
 <?php
     $dir = 'main';
-    $filename = 'index';
+    $filename = 'login';
     $path = null;
     //如果地址index.php后有字符串
     if (array_key_exists('PATH_INFO', $_SERVER)) {

@@ -1,4 +1,4 @@
-define(['jquery', 'cookie'], function ($) {
+define(['jquery', 'template', 'cookie'], function ($, template) {
     // NProgress.start();
     // NProgress.done();
     //左侧导航栏折叠展开
@@ -32,13 +32,19 @@ define(['jquery', 'cookie'], function ($) {
 
     //获取用户登录信息
     var loginInfo = $.cookie('loginInfo');
-    console.log(loginInfo);
-    //转成对象
-    var loginInfoObj = JSON.parse(loginInfo);
-    //渲染到aside.html中
-    $('.profile .img-circle img').attr('src', loginInfoObj.tc_avatar);
-    $('.profile h4').html(loginInfoObj.tc_name);
+    // console.log(loginInfo);
+    //如果有，再转成对象。因为默认会进login.html页面，这时还没有用户登录信息
+    var loginInfoObj = loginInfo? JSON.parse(loginInfo): {};
 
+    //利用模版引擎将用户信息渲染到aside.html中
+    //准备模版
+    var tmp = '<div class="avatar img-circle">\n' +
+        '            <img src="{{tc_avatar}}">\n' +
+        '        </div>\n' +
+        '        <h4>{{tc_name}}</h4>';
+    //调用api
+    var html = template.render(tmp, loginInfoObj);
+    $('#profileId').html(html);
 
 });
 

@@ -1,4 +1,4 @@
-//用户登录模块
+//用户登录模块，该模块又依赖了jquery.js和cookie.js两个文件
 define(['jquery', 'cookie'], function ($) {
     $('.btn-block').on('click', function () {
         $.ajax({

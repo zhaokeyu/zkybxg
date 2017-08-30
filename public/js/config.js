@@ -5,6 +5,7 @@ require.config({
         jquery: 'jquery/jquery.min',
         common: '../js/common',
         login: '../js/login',
-        cookie: 'jquery-cookie/jquery.cookie'
+        cookie: 'jquery-cookie/jquery.cookie',
+        template: 'artTemplate/template-web'
     }
 });

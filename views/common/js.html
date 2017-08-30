@@ -4,9 +4,17 @@
 <script src="/public/assets/nprogress/nprogress.js"></script>
 <script src="/public/js/common.js"></script>-->
 
+<!--每个页面都必须引入这3个js文件-->
 <script src="/public/assets/require/require.js"></script>
 <script src="/public/js/config.js"></script>
 <script>
     require(['common']);
 </script>
+
+<!--
+注意：这里的common.js必须使用异步的方式来加载，因为common.js文件中依赖了其它两个异步加载的文件。
+如果common.js是同步方式加载，那么优先访问common.js，而叶子模版还没有加载，保障不了先后顺序。
+不可以写成如下格式来加载common.js文件。
+-->
+<!--<script src="/public/js/common.js"></script>-->
 
