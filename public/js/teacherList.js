@@ -1,4 +1,6 @@
-define(['jquery', 'template', 'bootstrap'], function ($, template) {
+define(['jquery', 'template', 'util', 'bootstrap'], function ($, template, u) {
+    //左侧导航高亮显示
+    u.setMenu(location.pathname);
     //渲染讲师列表
     $.ajax({
         url: '/api/teacher',
