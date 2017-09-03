@@ -6,10 +6,12 @@ require.config({
         cookie: 'jquery-cookie/jquery.cookie',
         template: 'artTemplate/template-web',
         bootstrap: 'bootstrap/js/bootstrap.min',
-        datepicker: 'datepicker/js/bootstrap-datepicker.min',
-        language: 'datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        datepicker: 'bootstrap-datepicker/js/bootstrap-datepicker.min',
+        language: 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         validate: 'jquery-validate/jquery-validate.min',
         form: 'jquery-form/jquery.form',
+        region: 'jquery-region/jquery.region',
+        ckeditor: 'ckeditor/ckeditor',
         common: '../js/common',
         login: '../js/login',
         teacherList: '../js/teacherList',
@@ -27,6 +29,9 @@ require.config({
         },
         validate: {
             deps: ['jquery']
+        },
+        ckeditor: {
+            exports: 'CKEDITOR'
         }
     }
 
